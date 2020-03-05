@@ -13,7 +13,8 @@ export default createGlobalStyle`
     height: 100%;
     display: flex;
     flex-direction: column;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Fredoka One', cursive;
+    /* font-family: 'Bangers', cursive; */
     font-size: 10px;
   }
 
@@ -23,7 +24,7 @@ export default createGlobalStyle`
 
 
     h1,h2{
-      /* font-family: 'Bangers',sans-serif; */
+      font-family: 'Bangers',sans-serif;
       text-transform: capitalize;
     }
 
