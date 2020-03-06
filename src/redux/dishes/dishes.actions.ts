@@ -1,6 +1,8 @@
 /* eslint-disable no-undef */
 import { Dispatch } from 'react';
-import { ActionTypesMeals, GetMealsAction, CatchErrorSearchAction } from './dishes.types';
+import {
+  ActionTypesMeals, GetMealsAction, CatchErrorSearchAction, ClearSearchAction,
+} from './dishes.types';
 
 
 export const catchError = (err: Record<string, any>): CatchErrorSearchAction => ({
@@ -14,10 +16,15 @@ export const getDishes = (text: string) => async (dispatch: Dispatch<GetMealsAct
     const resBody = await res.json();
     dispatch({
       type: ActionTypesMeals.GET_MEALS,
-      payload: resBody,
+      payload: resBody.meals,
     });
   } catch (err) {
     console.error(err);
     catchError(err);
   }
 };
+
+
+export const clearSearchMeals = (): ClearSearchAction => ({
+  type: ActionTypesMeals.CLEAR_SEARCH,
+});

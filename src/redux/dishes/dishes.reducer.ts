@@ -21,6 +21,11 @@ export default (state: IMealState = initialState, action: MealActionTypes) => {
         error: action.payload,
         loading: false,
       };
+    case ActionTypesMeals.CLEAR_SEARCH:
+      return {
+        ...state,
+        meals: [],
+      };
     default:
       return state;
   }
