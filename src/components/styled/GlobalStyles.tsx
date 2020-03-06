@@ -1,11 +1,20 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, css } from 'styled-components';
+
+export const FlexStyle = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  padding: .5rem;
+`;
 
 export default createGlobalStyle`
-*::before,*::after,*{
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
+
+  *::before,*::after,*{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
   body {
     box-sizing: border-box;
     background: ${(props) => props.theme.colors.white};

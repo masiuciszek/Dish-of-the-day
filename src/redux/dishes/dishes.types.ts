@@ -33,6 +33,7 @@ export interface IMealState {
 export enum ActionTypesMeals {
   GET_MEALS = 'GET_MEALS',
   CLEAR_SEARCH = 'CLEAR_SEARCH',
+  CATCH_ERROR = 'CATCH_ERROR',
 }
 
 export interface GetMealsAction {
@@ -40,9 +41,14 @@ export interface GetMealsAction {
   payload: IMeal[];
 }
 
+export interface CatchErrorSearchAction {
+  type: ActionTypesMeals.CATCH_ERROR;
+  payload: Record<string, any>;
+}
+
 export interface ClearSearchAction {
   type: ActionTypesMeals.CLEAR_SEARCH;
 }
 
 
-export type MealActionTypes = GetMealsAction | ClearSearchAction
+export type MealActionTypes = GetMealsAction | ClearSearchAction | CatchErrorSearchAction
