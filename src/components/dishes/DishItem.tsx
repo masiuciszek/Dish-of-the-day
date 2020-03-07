@@ -12,6 +12,7 @@ const DishItem: React.FC<P> = ({ dish }) => {
     strMeal, strCategory, strArea, strMealThumb,
   } = dish;
 
+
   return (
     <StyledDishItem>
       <div className="content">
@@ -31,8 +32,6 @@ const DishItem: React.FC<P> = ({ dish }) => {
           <span>{strArea}</span>
         </strong>
       </div>
-
-
       <StyledImage src={strMealThumb} alt={strMeal} />
 
     </StyledDishItem>
