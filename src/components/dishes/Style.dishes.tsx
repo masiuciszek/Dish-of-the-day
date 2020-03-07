@@ -78,12 +78,20 @@ export const StyledDishItem = styled.div`
   border-radius:1rem;
   box-shadow: ${(props) => props.theme.shadow.lightShadow};
   margin: 1rem;
-  padding: 1.8rem .7rem;
+  padding: .4rem;
   letter-spacing: .1rem;
   position: relative;
+  transition: ${(props) => props.theme.transition.mainTransition};
+  .content{
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+  }
   strong,span{
     z-index: 2;
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin: .4rem;
   }
   span{
@@ -93,12 +101,17 @@ export const StyledDishItem = styled.div`
   @media(min-width: 800px ){
     width: 80%;
   }
-  #moreInfo{
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 2;
+
+  &:hover{
+    .content{
+      display:block;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items:center;
+    }
+    box-shadow: ${(props) => props.theme.shadow.darkShadow};
   }
 
   &::after{
@@ -110,12 +123,13 @@ export const StyledDishItem = styled.div`
     left:0;
     bottom:0;
     right:0;
-    background-color:rgba(0,0,0,0.5);
+    background-color:rgba(0,0,0,0.7);
     border-radius: 1rem;
   }
 
 `;
 
 export const StyledImage = styled.img`
-  max-width: 270px;
+  width: 100%;
+  border-radius: 1rem;
 `;
