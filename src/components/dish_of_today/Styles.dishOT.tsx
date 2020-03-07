@@ -55,3 +55,13 @@ export const StyledDishHeader = styled.section`
     box-shadow:  ${(props) => props.theme.shadow.lightShadow};
   }
 `;
+
+
+export const StyledIngredientsList = styled.div`
+  display: flex;
+  flex-direction: column;
+  /* TODO: DELETE */
+  border: 2px solid red;
+  width: 80%;
+  margin: 0 auto;
+`;

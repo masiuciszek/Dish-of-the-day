@@ -91,7 +91,7 @@ export const StyledDishItem = styled.div`
   }
   strong,span{
     z-index: 2;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin: .4rem;
   }
   span{

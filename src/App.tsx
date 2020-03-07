@@ -10,7 +10,7 @@ function App() {
     <Layout>
       <Switch>
         <Route exact path="/" component={Dishes} />
-        <Route exact path="/dish-of-today" component={DishOfToday} />
+        <Route exact path="/randomdish" component={DishOfToday} />
       </Switch>
     </Layout>
   );

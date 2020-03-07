@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable import/extensions */
 import * as React from 'react';
 import { connect } from 'react-redux';
@@ -14,21 +15,17 @@ interface P {
   loading: boolean;
 }
 
-const Dishes: React.FC<P> = ({ dishes, loading }) => {
-  let a;
-
-  return (
-    <DishesWrapper>
-      <Title mainTitle="Search" subTitle="for your favorite food" />
-      <DishSearch dishes={dishes} />
-      <DishItemGrid>
-        {!loading && dishes !== null && dishes.map((dish) => (
-          <DishItem key={dish.idMeal} dish={dish} />
-        ))}
-      </DishItemGrid>
-    </DishesWrapper>
-  );
-};
+const Dishes: React.FC<P> = ({ dishes, loading }) => (
+  <DishesWrapper>
+    <Title mainTitle="Search" subTitle="for your favorite food" />
+    <DishSearch dishes={dishes} />
+    <DishItemGrid>
+      {!loading && dishes !== null && dishes.map((dish) => (
+        <DishItem key={dish.idMeal} dish={dish} />
+      ))}
+    </DishItemGrid>
+  </DishesWrapper>
+);
 
 const mapStateToProps = (state: AppState) => ({
   dishes: getDishesSelector(state),
