@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 import { IMealState, MealActionTypes, ActionTypesMeals } from './dishes.types';
 
 

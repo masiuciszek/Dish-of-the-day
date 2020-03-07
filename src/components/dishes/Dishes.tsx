@@ -1,11 +1,13 @@
+/* eslint-disable import/extensions */
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { DishesWrapper } from './Style.dishes';
+import { DishesWrapper, DishItemGrid } from './Style.dishes';
 import DishSearch from './DishSearch';
 import Title from '../styled/title/Title';
 import { AppState } from '../../redux';
 import { getDishesSelector, dishesLoadingSelector } from '../../redux/dishes/dishes.selector';
 import { IMeal } from '../../redux/dishes/dishes.types';
+import DishItem from './DishItem';
 
 interface P {
   dishes: IMeal[];
@@ -19,9 +21,11 @@ const Dishes: React.FC<P> = ({ dishes, loading }) => {
     <DishesWrapper>
       <Title mainTitle="Search" subTitle="for your favorite food" />
       <DishSearch dishes={dishes} />
-      {!loading && dishes !== null && dishes.map((dish) => (
-        <li key={dish.idMeal}>{dish.strCategory}</li>
-      ))}
+      <DishItemGrid>
+        {!loading && dishes !== null && dishes.map((dish) => (
+          <DishItem key={dish.idMeal} dish={dish} />
+        ))}
+      </DishItemGrid>
     </DishesWrapper>
   );
 };
