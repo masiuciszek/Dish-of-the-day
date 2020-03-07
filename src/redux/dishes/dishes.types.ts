@@ -34,6 +34,7 @@ export enum ActionTypesMeals {
   GET_MEALS = 'GET_MEALS',
   CLEAR_SEARCH = 'CLEAR_SEARCH',
   CATCH_ERROR = 'CATCH_ERROR',
+  FETCH_RANDOM_MEAL = 'FETCH_RANDOM_MEAL'
 }
 
 export interface GetMealsAction {
@@ -46,9 +47,17 @@ export interface CatchErrorSearchAction {
   payload: Record<string, any>;
 }
 
+export interface FetchRandomMealAction {
+  type: ActionTypesMeals.FETCH_RANDOM_MEAL;
+  payload: IMeal;
+}
 export interface ClearSearchAction {
   type: ActionTypesMeals.CLEAR_SEARCH;
 }
 
 
-export type MealActionTypes = GetMealsAction | ClearSearchAction | CatchErrorSearchAction
+export type MealActionTypes =
+  GetMealsAction
+  | ClearSearchAction
+  | CatchErrorSearchAction
+  | FetchRandomMealAction

@@ -17,6 +17,12 @@ export default (state: IMealState = initialState, action: MealActionTypes) => {
         meals: action.payload,
         loading: false,
       };
+    case ActionTypesMeals.FETCH_RANDOM_MEAL:
+      return {
+        ...state,
+        meal: action.payload,
+        loading: false,
+      };
     case ActionTypesMeals.CATCH_ERROR:
       return {
         error: action.payload,

@@ -11,6 +11,11 @@ export const getDishesSelector = createSelector(
   (state: IMealState) => state.meals,
 );
 
+export const getDishSelector = createSelector(
+  [dishSelector],
+  (state: IMealState) => state.meal,
+);
+
 export const dishesLoadingSelector = createSelector(
   [dishSelector],
   (state: IMealState) => state.loading,
