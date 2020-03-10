@@ -5,6 +5,7 @@ import styled from 'styled-components';
 export const PrimaryBtn = styled.button`
   padding: .4rem .6rem;
   font-size: 1.2rem;
+  outline: none;
   border: 2px solid ${(props) => props.theme.colors.primary};
   border-radius: .7rem;
   box-shadow: ${(props) => props.theme.shadow.lightShadow};
